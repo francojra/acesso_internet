@@ -9,7 +9,7 @@
 dados <- read.csv2("dados_acesso_internet.csv", header = T, sep = ",", dec = ".")
 View(dados) # Visualizar dados 
 is.na(dados) # Verificar se existe NAs no conjunto de dados
-names(dados)
+names(dados) # Nomes das variáveis dos dados
 
 # Manipulação e descrição dos dados -------------------------------------------------------------------------------------------------------------
 
@@ -22,6 +22,18 @@ d <- dados %>%
   summarise(media = mean(acesso),
              se = sd(acesso) / sqrt(length(acesso)))
 d
+
+d1 <- dados %>%
+  select(Entity, Individuals.using.the.Internet....of.population., Year) %>%
+  rename(acesso = Individuals.using.the.Internet....of.population.) %>%
+  group_by(Entity, Year) %>%
+  summarise(media = mean(acesso)) 
+d1
+
+## Valores das médias de acesso do maior para menor e por ano
+
+d2_resume <- arrange(d1, desc(media))
+view_follow(d2_resume)
 
 # Gráfico ----------------------------------------------------------------------------------------------------------------------------------
 
