@@ -31,22 +31,23 @@ library(gganimate) # Pacote para animação do gráfico
 
 p <- ggplot(d, aes(x = Year, y = media, fill = Year)) +
   geom_col(position = "dodge") +
+  geom_point(position = position_dodge(.9), size = 1.7) +
   geom_errorbar(aes(x = Year, ymin = media - se, ymax = media + se), 
                 width = 0.14, position = position_dodge(.9), size = 0.9) +
-  scale_fill_viridis(option = "magma") +
+  scale_color_viridis_d() +
   labs(x = "Tempo (anos)", y = "Acesso à internet no mundo") +
-  theme_dark(base_size = 15) +
+  theme_bw(base_size = 15) +
   theme(legend.position = "none") 
 p
 
-p1 <- ggplot(d, aes(x = Year, y = media, fill = Year)) +
-  geom_point() +
-  geom_errorbar(aes(x = Year, ymin = media - se, ymax = media + se), 
-                width = 0.14, position = position_dodge(.9), size = 0.9) +
-  scale_color_brewer() +
+p1 <- ggplot(dados, 
+  aes(x = Year, y = Individuals.using.the.Internet....of.population.,
+      group = Entity, color = Entity)) +
+  geom_line(size = 0.68) +
+  scale_color_viridis_d() +
   labs(x = "Tempo (anos)", y = "Acesso à internet no mundo") +
-  theme_dark(base_size = 15) +
-  theme(legend.position = "none") 
+  theme_bw(base_size = 15) +
+  theme(legend.position = "none")
 p1
 
-p1 + transition_time(Year)
+p1 + geom_point() + transition_reveal(Year)
