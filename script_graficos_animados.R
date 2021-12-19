@@ -30,7 +30,7 @@ d1 <- dados %>%
   summarise(media = mean(acesso)) 
 d1
 
-## Valores das médias de acesso do maior para menor e por ano
+## Valores das médias de acesso da maior para menor e por ano
 
 d2_resume <- arrange(d1, desc(media))
 view_follow(d2_resume)
