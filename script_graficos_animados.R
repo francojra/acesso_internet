@@ -54,4 +54,4 @@ p1
 
 gr <- p1 + geom_point() + transition_reveal(Year)
 
-anim_save("gr.gif", width = 10, height = 10)
+anim_save("gr.gif")
