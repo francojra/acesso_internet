@@ -141,3 +141,5 @@ p2 <- ggplot(data,
         axis.title = element_text(size = 16, face = "bold"))
 p2
 
+animate(p2, height = 600, width = 760)
+anim_save("internet_example.gif")
