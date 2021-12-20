@@ -120,10 +120,10 @@ p2 <- ggplot(data,
   aes(x = Year, y = acesso,
       group = pais, color = pais)) +
   geom_line(size = 1.8) +
-  geom_segment(aes(xend = 2018, yend = acesso), 
+  geom_segment(aes(xend = 2016, yend = acesso), 
                  linetype = 2.5, colour = "black") +
   geom_point(size = 3) + 
-  geom_text(aes(x = 2018, label = pais), size = 7, hjust = 0) + 
+  geom_text(aes(x = 2016, label = pais), size = 7, hjust = 0) + 
   transition_reveal(Year) +
   coord_cartesian(clip = 'off') +
   scale_x_continuous(breaks = c(1990, 1991, 1992,
@@ -135,11 +135,11 @@ p2 <- ggplot(data,
   labs(x = "Tempo (anos)", y = "Acesso à internet",
        caption = "Fonte dos dados: Our World in Data") +
   theme_gray() +
-  theme(legend.position = "none", plot.margin = margin(6, 50, 9, 9),
+  theme(legend.position = "none", plot.margin = margin(5, 40, 2, 0.2),
         axis.text.x = element_text(angle = 60, size = 14, face = "bold"),
         axis.text.y = element_text(size = 14, face = "bold"),
         axis.title = element_text(size = 16, face = "bold"))
 p2
 
-animate(p2, height = 600, width = 760)
+animate(p2, height = 600, width = 900)
 anim_save("internet_example.gif")
