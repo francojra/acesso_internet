@@ -76,6 +76,10 @@ anim_save("gr.gif")
 ### Primeiro salvei várias tabelas com dados de um país de 1990 a 2018
 ### Depois uni os dados em uma tabela para análise
 
+
+# Manipulação dos dados --------------------------------------------------------------------------------------------------------------------
+
+
 a1 <- dados %>%
   select(Entity, Individuals.using.the.Internet....of.population., Year) %>%
   filter(Entity == "Qatar") 
@@ -111,10 +115,17 @@ a5
 
 write.table(a5, "a5.txt", row.names = F, dec = ",")
 
+# Carregar tabela completa  ----------------------------------------------------------------------------------------------------------------
+
+
 library(readxl) # Pacote que permite função para ler tabela do excel
 
 data <- read_excel("dados_acesso_internet.xlsx")
 View(data)
+
+
+# Gráfico ----------------------------------------------------------------------------------------------------------------------------------
+
 
 p2 <- ggplot(data, 
   aes(x = Year, y = acesso,
