@@ -47,7 +47,7 @@ p <- ggplot(d, aes(x = Year, y = media, fill = Year)) +
   geom_errorbar(aes(x = Year, ymin = media - se, ymax = media + se), 
                 width = 0.14, position = position_dodge(.9), size = 0.9) +
   scale_fill_viridis() +
-  labs(x = "Tempo (anos)", y = "Acesso à internet no mundo",
+  labs(x = "Tempo (anos)", y = "Acesso à internet pela população (%)",
        caption = "Fonte dos dados: Our World in Data") +
   theme_bw(base_size = 15) +
   theme(legend.position = "none") 
@@ -61,7 +61,7 @@ p1 <- ggplot(dados,
   geom_segment(aes(xend = 2020, 
                    yend = Individuals.using.the.Internet....of.population.)) +
   geom_text(aes(x = 2020, label = Entity), hjust = 0) + 
-  labs(x = "Tempo (anos)", y = "Acesso à internet no mundo",
+  labs(x = "Tempo (anos)", y = "Acesso à internet pela população (%)",
        caption = "Fonte dos dados: Our World in Data") +
   theme_bw(base_size = 15) +
   theme(legend.position = "none")
@@ -130,7 +130,7 @@ View(data)
 p2 <- ggplot(data, 
   aes(x = Year, y = acesso,
       group = pais, color = pais)) +
-  geom_line(size = 1.8) +
+  geom_line(size = 1.4) +
   geom_segment(aes(xend = 2016, yend = acesso), 
                  linetype = 2.5, colour = "black") +
   geom_point(size = 3) + 
@@ -143,7 +143,7 @@ p2 <- ggplot(data,
                                 2008, 2009, 2010, 2011, 2012, 2013, 2014,
                                 2015, 2016, 2017, 2018)) +
   scale_color_brewer(palette = "Dark2") +
-  labs(x = "Tempo (anos)", y = "Acesso à internet",
+  labs(x = "Tempo (anos)", y = "Acesso à internet pela população (%)",
        caption = "Fonte dos dados: Our World in Data") +
   theme_gray() +
   theme(legend.position = "none", plot.margin = margin(5, 40, 2, 0.2),
@@ -152,5 +152,5 @@ p2 <- ggplot(data,
         axis.title = element_text(size = 16, face = "bold"))
 p2
 
-animate(p2, height = 600, width = 900)
+animate(p2, height = 600, width = 800)
 anim_save("internet_example.gif")
