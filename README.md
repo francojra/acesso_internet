@@ -8,4 +8,6 @@
 2. Manipulação e descrição dos dados;
 3. Gráfico;
 4. Acesso à internet por país;
-5. 
+5. Manipulação dos dados;
+6. Carregar tabela completa;
+7. Gráfico.
