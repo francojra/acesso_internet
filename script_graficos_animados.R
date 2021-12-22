@@ -74,7 +74,7 @@ anim_save("gr.gif")
 # Acesso à internet por país ---------------------------------------------------------------------------------------------------------------
 
 ### Primeiro salvei várias tabelas com dados de um país de 1990 a 2018
-### Depois uni os dados em uma tabela para análise
+### Depois uni os dados dessas tabelas em uma única tabela para análise
 
 
 # Manipulação dos dados --------------------------------------------------------------------------------------------------------------------
