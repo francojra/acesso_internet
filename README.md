@@ -4,4 +4,8 @@
 
 ### Etapas do Script:
 
-
+1. Carregar dados;
+2. Manipulação e descrição dos dados;
+3. Gráfico;
+4. Acesso à internet por país;
+5. 
